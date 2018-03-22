@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+    <link href="http://sachinchoolur.github.io/lightGallery/lightgallery/css/lightgallery.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="http://sachinchoolur.github.io/lightGallery/lightgallery/js/lightgallery.js"></script>
+    <script src="http://sachinchoolur.github.io/lightGallery/lightgallery/js/lg-fullscreen.js"></script>
+    <script src="http://sachinchoolur.github.io/lightGallery/lightgallery/js/lg-thumbnail.js"></script>
+    <script src="lg-deletebutton.js"></script>
+
+</head>
+
+<body>
+
+    <div id="v2">
+    </div>
+
+    <script>
+        $('#v2').lightGallery({
+            dynamic: true,
+            dynamicEl: [{
+                "src": 'https://placehold.it/250x150',
+                'thumb': 'https://placehold.it/250x150',
+            }, {
+                'src': 'https://placehold.it/350x150',
+                'thumb': 'https://placehold.it/350x150',
+
+            }, {
+                'src': 'https://placehold.it/250x150',
+                'thumb': 'https://placehold.it/250x150',
+
+            }, {
+                'src': 'https://placehold.it/450x150',
+                'thumb': 'https://placehold.it/450x150',
+
+            }]
+        });
+    </script>
+
+</body>
+
+</html>
