@@ -9,7 +9,7 @@
 
 - [static example](https://rawgit.com/d-kochanzhi/lg-deletebutton/master/index_static.html)
 
-
+![image](https://rawgit.com/d-kochanzhi/lg-deletebutton/master/2018-03-22_15-32-12.png)
 
 ## Usage
 
