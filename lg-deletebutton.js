@@ -18,8 +18,13 @@
     }
 
     Delete.prototype.init = function() {
-        var deleteIcon = '<span id="lg-clear" class="lg-icon deletePicture"><span class="glyphicon glyphicon-trash"></span></span>';
+        var filled_star_url = "https://cdn1.iconfinder.com/data/icons/hawcons/32/698904-icon-23-star-256.png";
+        var deleteIcon = '<span id="lg-clear" class="lg-icon"></span>';
         this.core.$outer.find('.lg-toolbar').append(deleteIcon);
+        $("#lg-clear").css('background-image', 'url('+filled_star_url+')');
+        $("#lg-clear").css('background-position', 'center');
+        $("#lg-clear").css('background-size', '30px');
+        $("#lg-clear").css('background-repeat', 'no-repeat');
 
         this.delete();
 
@@ -29,7 +34,25 @@
     Delete.prototype.delete = function() {
         var that = this;
         this.core.$outer.find('.deletePicture').on('click', function() {
-
+            var slider_url = (jQuery(".lg-current > .lg-img-wrap > img").attr('src'));
+            if (jQuery("#lg-clear").css('background-image') === 'url(' + '"' + filled_star_url + '"' + ')'){
+                jQuery.ajax({ //deletes the picture
+                    url: 'https://ajax.topspeed.com/wp-admin/admin-ajax.php',
+                    type: 'POST',
+                    data: {
+                        action: 'delete_wp_picture',
+                        object: 'picture',
+                        object_url: slider_url,
+                    },
+                    success: function(msg){
+                        jQuery('#my_pictures').find('a[href="'+slider_url+'"]').css('display', 'none');
+                    },
+                    xhrFields: {
+                        withCredentials: true
+                    },
+                    crossDomain: true
+                });
+            }
             var elements;
             if (that.core.s.dynamic) {
                 elements = that.core.s.dynamicEl;
